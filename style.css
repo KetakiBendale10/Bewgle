@@ -1,0 +1,139 @@
+body {
+    background-color: whitesmoke
+}
+
+.container-fluid {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    background-color: whitesmoke
+}
+
+.product-img {
+    border: 1px solid lightgray;
+    border-radius: 1px;
+    margin-top: 20px;
+}
+
+.product-img>img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
+.breadcrumb {
+    background-color: white;
+    padding-left: unset;
+}
+
+.product-details {
+    margin-top: 20px;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+.product {
+    background-color: white;
+}
+
+.reviews {
+    text-align: center;
+    padding-top: 3%;
+    border-right: 1px solid lightgrey;
+}
+
+.reviews :first-child {
+    color: green;
+    font-size: 2rem;
+}
+
+.scores {
+    padding-top: 3%;
+}
+
+.progress {
+    width: 80px;
+    height: 80px;
+    background: none;
+    position: relative;
+}
+
+.progress::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.progress .progress-left {
+    left: 0;
+}
+
+.progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 6px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress .progress-right {
+    right: 0;
+}
+
+.progress .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.progress .progress-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.center {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.published {
+    float: right;
+    font-size: 0.75rem;
+    color: grey;
+}

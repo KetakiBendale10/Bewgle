@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Product</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">
+                         Home
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="container-fluid">
+        <div class="row product">
+            <div class="col-md-4">
+                <div class="product-img">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/71nwG2LuLsL._SL1200_.jpg">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="product-details">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Audio & Video</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Speakers</li>
+                            <li class="breadcrumb-item active" aria-current="page">JBL Speakers</li>
+                        </ol>
+                    </nav>
+                    <span class="published">Published - 2018-08-31</span>
+                    <h5 class="title">JBL Go Portable Wireless Bluetooth Speaker with Mic (Black)</h5>
+                    <p class="price">₹ 1,799.00</p>
+                </div>
+                <div>
+                    <h5>Reviews</h5>
+                    <div class="row">
+                        <div class="col-md-4 reviews">
+                            <span>3013</span>
+                            <br>
+                            <span>Reviews</span>
+                        </div>
+                        <div class="col-md-8 scores">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="progress mx-auto" data-value='4'>
+                                        <span class="progress-left">
+                                                                      <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                                                      <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h6">4</div>
+                                        </div>
+                                    </div>
+                                    <p class="center">Sound Quality</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="progress mx-auto" data-value='2.5'>
+                                        <span class="progress-left">
+                                                                          <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                                                          <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h6">2.5</div>
+                                        </div>
+                                    </div>
+                                    <p class="center">Bass</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="progress mx-auto" data-value='3'>
+                                        <span class="progress-left">
+                                                                              <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                                                              <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h6">3</div>
+                                        </div>
+                                    </div>
+                                    <p class="center">Design & Build</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="progress mx-auto" data-value='5'>
+                                        <span class="progress-left">
+                                                                                  <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                                                                  <span class="progress-bar border-success"></span>
+                                        </span>
+                                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h6">5</div>
+                                        </div>
+                                    </div>
+                                    <p class="center">Battery Backup</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            $(".progress").each(function() {
+                var value = $(this).attr('data-value');
+                var left = $(this).find('.progress-left .progress-bar');
+                var right = $(this).find('.progress-right .progress-bar');
+                if (value > 0) {
+                    if (value <= 2.5) {
+                        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+                    } else {
+                        right.css('transform', 'rotate(180deg)')
+                        left.css('transform', 'rotate(' + percentageToDegrees(value - 2.5) + 'deg)')
+                    }
+                }
+            })
+
+            function percentageToDegrees(percentage) {
+                return percentage / 5 * 360
+            }
+
+            $.ajax({
+                url: "product.json",
+                context: document.body,
+                crossDomain: true
+            }).done(function(data) {
+                console.log(data)
+            });
+        })
+    </script>
+</body>
+
+
+</html>
